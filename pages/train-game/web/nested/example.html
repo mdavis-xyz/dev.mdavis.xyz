@@ -1,0 +1,60 @@
+<html>
+   <header>
+      <meta charset="UTF-8">
+      <title>Train Game Solver</title>
+      <link rel="stylesheet" type="text/css" href="styles.css" />
+      <script type="text/javascript" src="checkboxes.js"></script>
+   </header>
+   <body>
+
+      <h1>
+         Train Game Solver
+      </h1>
+      <h2>
+         Options
+      </h2>
+		<form id="checkboxes">
+      <ul>
+         <li>
+            <label>
+               <input type="checkbox" id="basics" checked onclick="parent(this)">
+                  Basics
+               </input>
+            </label>
+            <li>
+               <ul id="basicsChildren" parentop="basics">
+                  <li>
+                     <label>
+                        <input type="checkbox" name="plus" value="plus" id="plus" checked onclick="child(this)">
+                           Addition (+)
+                        </input>
+                     </label>
+                  </li>
+                  <li>
+                     <label>
+                        <input type="checkbox" name="minus" value="minus" id="minus" checked onclick="child(this)">
+                           Subtraction (-)
+                        </input>
+                     </label>
+                  </li>
+                  <li>
+                     <label>
+                        <input type="checkbox" name="times" value="times" id="times" checked onclick="child(this)">
+                           Multiplication (&#215;)
+                        </input>
+                     </label>
+                  </li>
+                  <li>
+                     <label>
+                        <input type="checkbox" name="divide" value="divide" id="divide" checked onclick="child(this)">
+                           Addition (&#247;)
+                        </input>
+                     </label>
+                  </li>
+               </ul>
+            </li>
+         </li>
+      </ul>
+      </form>
+   </body>
+</html>

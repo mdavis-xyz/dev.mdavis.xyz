@@ -1,0 +1,99 @@
+<html>
+   <header>
+      <meta charset="UTF-8">
+      <title>Train Game Solver</title>
+      <!-- <link rel="stylesheet" type="text/css" href="styles.css" /> -->
+   </header>
+   <body>
+
+      <h1>
+         Train Game Solver
+      </h1>
+      <!-- <h2>
+         Options
+      </h2> -->
+      <script>
+      function submit() {
+          document.getElementById('solution').innerHTML = "Calculating...";
+          var xhttp = new XMLHttpRequest();
+          var url = "https://us-central1-muckaround-200507.cloudfunctions.net/solve?"
+                  + "basic=" + document.getElementById('basic').checked
+                  + "&trigrad=" + document.getElementById('trigrad').checked
+                  + "&trigdeg=" + document.getElementById('trigdeg').checked
+                  + "&log=" + document.getElementById('log').checked
+                  + "&power=" + document.getElementById('power').checked
+                  + "&root=" + document.getElementById('root').checked
+                  + "&factorial=" + document.getElementById('factorial').checked
+                  + "&number=" + document.getElementById('number').value
+                  + "&target=" + document.getElementById('number').value
+                  + "&format=plaintext";
+          xhttp.open("GET", url, true);
+          xhttp.setRequestHeader("Content-type", "application/json");
+          xhttp.send();
+          var response = JSON.parse(xhttp.responseText);
+          document.getElementById('solution').innerHTML = response;
+          console.log(response);
+      }
+      </script>
+		<form id="form" >
+         Problem: <input type="number" min=0 max=9999 id="number" value=1234> (4 digits)
+         <br />
+         Target: <input type="number" id="target" value=10>
+         <br />
+         <ul>
+            <li>
+               <label>
+                  <input type="checkbox" id="basic">
+                     Basics (+,- &#215;, &#247;)
+                  </input>
+               </label>
+            </li>
+            <li>
+               <label>
+                  <input type="checkbox" id="trigdeg">
+                     Trigonometry (degrees)
+                  </input>
+               </label>
+            </li>
+            <li>
+               <label>
+                  <input type="checkbox" id="trigrad">
+                     Trigonometry (radians)
+                  </input>
+               </label>
+            </li>
+            <li>
+               <label>
+                  <input type="checkbox" id="log">
+                     Logarithms
+                  </input>
+               </label>
+            </li>
+            <li>
+               <label>
+                  <input type="checkbox" id="power">
+                     Powers
+                  </input>
+               </label>
+            </li>
+            <li>
+               <label>
+                  <input type="checkbox" id="root">
+                     Roots
+                  </input>
+               </label>
+            </li>
+            <li>
+               <label>
+                  <input type="checkbox" id="factorial">
+                     Factorials
+                  </input>
+               </label>
+            </li>
+         </ul><br />
+      </form>
+      <button onclick="submit()">Calculate</button>
+      <div id="solution">
+      </div>
+   </body>
+</html>

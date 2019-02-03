@@ -78,6 +78,27 @@
    article: True
    exclude:
       - 'footerHR'
+-  title: "train game solver"
+   description: "An algorithm for solving the maths problem known as The Train Game"
+   path: "train-game"
+   images:
+      card:
+         path: "pics/card.jpg"
+         description: "Train"
+         width: 677
+         height: 1000
+         attribution: "https://www.tripadvisor.com.au/Attraction_Review-g255060-d8130880-Reviews-Sydney_Trains-Sydney_New_South_Wales.html#photos;aggregationId=101&albumid=101&filter=7&ff=349619996"
+      top:
+         path: "pics/num4-a.jpg"
+         description: "Train Carriage Number"
+         width: 563
+         height: 1000
+   template: "html"
+   markdown: "content.html"
+   extra:
+      - file: 'MathJax.js'
+        type: 'javascript'
+        async: true
 -  title: "Machine Learning Unicycling"
    description: "Teaching a computer to ride a simulated unicycle"
    path: "unicycle"

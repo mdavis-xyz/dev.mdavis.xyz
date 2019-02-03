@@ -1,0 +1,71 @@
+<html>
+   <header>
+      <meta charset="UTF-8">
+      <title>Train Game Solver</title>
+      <link rel="stylesheet" type="text/css" href="styles.css" />
+      <script type="text/javascript" src="checkboxes.js"></script>
+   </header>
+   <body>
+
+      <h1>
+         Train Game Solver
+      </h1>
+      <h2>
+         Options
+      </h2>
+		<form id="checkboxes">
+      <ul>
+         <li>
+            <label>
+               <input type="checkbox" id="basics" checked onclick="parent(this)">
+                  Basics
+               </input>
+            </label>
+            <li>
+               <ul id="basicsChildren" parentop="basics">
+                  <li>
+                     <label>
+                        <input type="checkbox" name="plus" value="plus" id="plus" checked onclick="child(this)">
+                           Addition (+)
+                        </input>
+                     </label>
+                  </li>
+                  <li>
+                     <label>
+                        <input type="checkbox" name="minus" value="minus" id="minus" checked onclick="child(this)">
+                           Subtraction (-)
+                        </input>
+                     </label>
+                  </li>
+               </ul>
+            </li>
+         </li>
+         <li>
+            <label>
+               <input type="checkbox" id="trig" checked onclick="parent(this)">
+                  Trigonometric Functions
+               </input>
+            </label>
+            <li>
+               <ul id="trigChildren" parentop="trig">
+                  <li>
+                     <label>
+                        <input type="checkbox" name="sindeg" value="sindeg" id="sindeg" checked onclick="child(this)">
+                           sin(x) in degrees
+                        </input>
+                     </label>
+                  </li>
+                  <li>
+                     <label>
+                        <input type="checkbox" name="sinrad" value="sinrad" id="sinrad" checked onclick="child(this)">
+                           sin(x) in radians
+                        </input>
+                     </label>
+                  </li>
+               </ul>
+            </li>
+         </li>
+      </ul>
+      </form>
+   </body>
+</html>

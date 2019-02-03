@@ -1,0 +1,43 @@
+<html>
+   <header>
+      <meta charset="UTF-8">
+      <title>Train Game Solver</title>
+      <link rel="stylesheet" type="text/css" href="styles.css" />
+      <script type="text/javascript" src="checkboxes.js"></script>
+   </header>
+   <body>
+
+      <h1>
+         Train Game Solver
+      </h1>
+      <h2>
+         Options
+      </h2>
+		<form id="checkboxes">
+      <ul>
+         % for group in data:
+         <li>
+            <label>
+               <input type="checkbox" id="${group['name']}" checked onclick="parent(this)">
+                  ${group['text']}
+               </input>
+            </label>
+            <li>
+               <ul id="${group['name']}Children" parentop="${group['name']}">
+                  % for op in group['children']:
+                  <li>
+                     <label>
+                        <input type="checkbox" name="${op['name']}" value="${op['name']}" id="${op['name']}" checked onclick="child(this)">
+                           ${op['text']}
+                        </input>
+                     </label>
+                  </li>
+                  % endfor
+               </ul>
+            </li>
+         </li>
+         % endfor
+      </ul>
+      </form>
+   </body>
+</html>
