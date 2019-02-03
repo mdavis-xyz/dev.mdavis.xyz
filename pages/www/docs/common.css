@@ -210,3 +210,14 @@ blockquote p {
    box-shadow: 0 0px 16px 0 rgba(0,0,0,0.4);
    text-decoration: none;
 }
+
+.button-disable {
+   background-color: #2d5f98 !important;
+   color: #a8b6bd !important;
+}
+
+.button-disable:hover,
+.button-disable:focus {
+   // same as no shadow
+   box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2) !important;
+}

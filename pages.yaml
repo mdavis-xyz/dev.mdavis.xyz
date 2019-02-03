@@ -94,11 +94,13 @@
          width: 563
          height: 1000
    template: "html"
-   markdown: "content.html"
+   html: "content.html"
    extra:
-      - file: 'MathJax.js'
+      - file: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML'
         type: 'javascript'
-        async: true
+        async: false
+   exclude:
+      - 'spellcheck'
 -  title: "Machine Learning Unicycling"
    description: "Teaching a computer to ride a simulated unicycle"
    path: "unicycle"
