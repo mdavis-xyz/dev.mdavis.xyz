@@ -98,7 +98,7 @@
    extra:
       - file: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML'
         type: 'javascript'
-        async: false
+        async: true
    exclude:
       - 'spellcheck'
 -  title: "Machine Learning Unicycling"
