@@ -21,7 +21,7 @@
       margin: 0.45em;
       font-size: 200%;
    }
-   #button {
+   #submit {
       font-size: 140%;
    }
 }
@@ -39,7 +39,7 @@
 }
 
 
-#solver {
+#input-flex {
    display: flex;
    flex-direction: row;
    flex-wrap: wrap;
@@ -53,4 +53,20 @@
 
 #opslist  {
     list-style: none;
+}
+
+.niceImage {
+   border-radius: 0.2em;
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+   max-width: 80%;
+   height: auto;
+   width: 30em;
+}
+
+#result_frame {
+   max-width: 90%;
+   overflow-x: auto;
+   height: auto;
+   border: none;
+   color: white;
 }

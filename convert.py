@@ -242,6 +242,14 @@ def doAll(args):
         else:
             assert('publishPath' in page)
             assert('sourcePath' in page)
+
+
+    if args.only_page and not (args.only_page in [p['sourcePath'] for p in pagesData]):
+        print("Error, page %s does not exist in pages.yaml" % args.only_page)
+        exit(1)
+
+    for page in pagesData:
+            
         if 'exclude' not in page:
             page['exclude'] = []
         for k in ['title','description']:

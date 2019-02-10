@@ -89,10 +89,11 @@
          height: 1000
          attribution: "https://www.tripadvisor.com.au/Attraction_Review-g255060-d8130880-Reviews-Sydney_Trains-Sydney_New_South_Wales.html#photos;aggregationId=101&albumid=101&filter=7&ff=349619996"
       top:
-         path: "pics/num4-a.jpg"
-         description: "Train Carriage Number"
-         width: 563
+         path: "pics/card.jpg"
+         width: 677
          height: 1000
+         #attribution: "https://www.tripadvisor.com.au/Attraction_Review-g255060-d8130880-Reviews-Sydney_Trains-Sydney_New_South_Wales.html#photos;aggregationId=101&albumid=101&filter=7&ff=349619996"
+         description: "Train"
    template: "html"
    html: "content.html"
    extra:

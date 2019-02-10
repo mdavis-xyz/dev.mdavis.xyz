@@ -27,7 +27,7 @@
    <meta property="og:author" content="Matthew Davis" />
    <meta property="og:site_name" content="Matthew Davis's Blog" />
 
-   <meta name="displaydate" content="7 Feb 2019">
+   <meta name="displaydate" content="10 Feb 2019">
 
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -56,9 +56,9 @@
 
       <p class="topimagecont">
          <img class="topimage"
-              src="pics/num4-a.jpg"
-              alt="Train Carriage Number"
-              width="563"
+              src="pics/card.jpg"
+              alt="Train"
+              width="677"
               height="1000" />
       </p>
 
@@ -87,8 +87,8 @@
                 alt=""
                 width="20"
                 height="20" />
-            <time datetime="2019-02-07" class="dateline">
-               7 Feb 2019
+            <time datetime="2019-02-10" class="dateline">
+               10 Feb 2019
             </time>
          </div>
          <div class="metalinesep">
@@ -101,7 +101,7 @@
                 alt=""
                 width="20"
                 height="20" />
-            1 min
+            2 min
          </div>
 
       </div>
@@ -117,7 +117,13 @@ The aim of the game is to take a number (such as the carriage number on that bor
 and to compose an expression using those digits in order, which equals a target (typically 10).
 </p>
 <p>
-For example, if the input number is 9302, a solution is $$9 + 3 + 0 - 2 = 10$$
+For example, the carriage number in this photo is 1802.
+
+<div class="center">
+   <img class="niceImage" src="pics/num4-a.jpg" alt="Train Carriage Number" width="563" height="1000">
+</div>
+
+One solution for this number is $$1 \times 8 + 0 + 2 = 10$$
 
 Another example is the number 4342, which can be solved with
 
@@ -129,7 +135,7 @@ Typically the input number is 4 digits long.
 Some people play a variation where the digit order may be changed.
 </p>
 <p>
-For a target of 10, the brute force algorithm (described later)
+For a target of 10, a brute-force algorithm (described later)
 was used to calculate that 81% of of 4 digit problems are solvable with just addition, subtraction, multiplication and division.
 To solve the remaining 19% of problems, one must resort to more exotic functions such as logarithms, factorials and trigonometric functions.
 For example, a solution for the number 2823 is
@@ -142,84 +148,100 @@ $$\left(log_2(8)\right)! -2 + 3! = 10$$
    The Solver
 </h2>
 
+<p>
+   This tool will solve any train game problem for you.
+   You may choose a target other than 10.
+   The list of allowed functions can be modified to suit the version you play.
+   (Not everyone allows exotic functions.)
+</p>
+
 <div class="center">
-<form id="solver" >
+<form
+    id="solver"
+    action="https://us-central1-traingame-202010.cloudfunctions.net/train-game-solve"
+    target="result_frame"
+    method="get">
+   <div id="input-flex">
    <div>
       <div>
          Input Problem
       </div>
       <div>
-          <input class="number digit" type="text" min=0 max=9 id="digit-0" value=1>
-          <input class="number digit" type="text" min=0 max=9 id="digit-1" value=2>
-          <input class="number digit" type="text" min=0 max=9 id="digit-2" value=3>
-          <input class="number digit" type="text" min=0 max=9 id="digit-3" value=4>
+          <input class="number digit" type="text" min=0 max=9 id="digit-0" name="digit-0" value=1>
+          <input class="number digit" type="text" min=0 max=9 id="digit-1" name="digit-1" value=2>
+          <input class="number digit" type="text" min=0 max=9 id="digit-2" name="digit-2" value=3>
+          <input class="number digit" type="text" min=0 max=9 id="digit-3" name="digit-3" value=4>
       </div>
 
       <div>
          Target
       </div>
       <div>
-         <input class="number digits" type="number" id="target" value=10>
+         <input class="number digits" type="number" id="target" name="target" value=10>
       </div>
    </div>
-   <ul id="opslist">
+   <ul id="opslist" name="opslist">
       <li>
          <label>
-            <input type="checkbox" id="basic" checked>
+            <input type="checkbox" id="basic" name="basic" checked>
                Basics (+,- &#215;, &#247;)
             </input>
          </label>
       </li>
       <li>
          <label>
-            <input type="checkbox" id="power">
+            <input type="checkbox" id="power" name="power">
                Powers
             </input>
          </label>
       </li>
       <li>
          <label>
-            <input type="checkbox" id="root">
+            <input type="checkbox" id="root" name="root">
                Roots
             </input>
          </label>
       </li>
       <li>
          <label>
-            <input type="checkbox" id="factorial">
+            <input type="checkbox" id="factorial" name="factorial">
                Factorials
             </input>
          </label>
       </li>
       <li>
          <label>
-            <input type="checkbox" id="trigdeg">
+            <input type="checkbox" id="trigdeg" name="trigdeg">
                Trigonometry (degrees)
             </input>
          </label>
       </li>
       <li>
          <label>
-            <input type="checkbox" id="trigrad">
+            <input type="checkbox" id="trigrad" name="trigrad">
                Trigonometry (radians)
             </input>
          </label>
       </li>
       <li>
          <label>
-            <input type="checkbox" id="log">
+            <input type="checkbox" id="log" name="log">
                Logarithms
             </input>
          </label>
       </li>
    </ul>
-
+   </div>
+   <input type="hidden" name="format" value="html-web">
+   <input id="submit" type="submit" value="Calculate" class="button"></input>
+   <div class="center">
+      <iframe id="result_frame" name="result_frame" class="center">
+      </iframe>
+   </div>
 </form>
-<button onclick="submit()" class="button" id="button">Calculate</button>
 
-<div>
-   Solution
-</div>
+
+
 
 </div>
 <h2>

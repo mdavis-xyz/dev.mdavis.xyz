@@ -4,6 +4,17 @@ const digitIndexs = [0, 1, 2, 3];
 var prevContent = ['1','2','3','4']
 var digitsValid = [true,true,true,true]
 
+// hide solution iframe at first
+window.addEventListener("load",function(){
+   var el = document.getElementById("result_frame");
+   if (! el.src){
+      el.style.display = "none";
+   }
+   el.addEventListener("load",function(){
+      console.log("iframe loaded");
+      el.style.display = "inline";
+   });
+});
 
 window.addEventListener("load",function(){
    console.log("Triggering main matt script");
@@ -16,7 +27,7 @@ window.addEventListener("load",function(){
    });
    var targetEl = document.getElementById('target')
    targetEl.onkeyup = function(){
-      var buttonEl = document.getElementById('button');
+      var buttonEl = document.getElementById('submit');
       if (targetEl.value.length == 0){
          targetEl.classList.add('invalid');
       }else{
