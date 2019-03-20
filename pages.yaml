@@ -141,6 +141,35 @@
       - 'script'
       - 'hr'
    date: 7/1/2019
+-  title: "Why everyone should talk about how much they earn"
+   description: "How wage transparency closes pay gaps and helps business"
+   path: "wages"
+   images:
+      card:
+         path: "card.jpg"
+         description: "Coins on a table"
+         width: 1000
+         height: 667
+         attribution: https://unsplash.com/photos/WVUrbhWtRNM
+      top:
+         path: "top.jpg"
+         description: "Coins on a table"
+         width: 2000
+         height: 1334
+         attribution: Photo by <a href="https://unsplash.com/photos/WVUrbhWtRNM">Steve Johnson</a> on <a href="https://unsplash.com">Unsplash</a>
+   template: "markdown"
+   markdown: "content.md"
+   regex:
+      - what: "html"
+        search: regex/plus-minus/search.txt
+        replace: regex/plus-minus/replace.txt
+        test:
+           - in: regex/plus-minus/test/0/in.txt
+             out: regex/plus-minus/test/0/out.txt
+   exclude:
+      - 'media'
+      - 'script'
+   date: 20/3/2019
 -  title: "Arduino Monitor Rotator"
    description: "Build an Automatic Computer Display Rotator With an Arduino"
    path: "monitor"
