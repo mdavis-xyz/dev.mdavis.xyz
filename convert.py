@@ -262,10 +262,16 @@ def doWWW(pages):
 
     return(outputHTML)
 
-def handleRobots():
-    src = "pages/robots.txt"
-    dest = "docs/robots.txt"
-    shutil.copyfile(src, dest)
+def handleRobots(stage):
+    # block all robots in dev
+    # allow all in prod
+    path = "docs/robots.txt"
+    with open(path, 'w') as f:
+        f.write("User-agent: *\n")
+        if stage == 'prod':
+            f.write("Allow: /\n")
+        else:
+            f.write("Disallow: /\n")
 
 # data is for one page
 def getDate(data):
@@ -371,7 +377,7 @@ def doAll(args):
         print("copying %s to %s" % (src,dest))
         shutil.copytree(src, dest)
 
-    handleRobots()
+    handleRobots(stage=args.stage_name)
 
     print("Done")
 
