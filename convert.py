@@ -262,6 +262,11 @@ def doWWW(pages):
 
     return(outputHTML)
 
+def handleRobots():
+    src = "pages/robots.txt"
+    dest = "docs/robots.txt"
+    shutil.copyfile(src, dest)
+
 # data is for one page
 def getDate(data):
 
@@ -365,6 +370,8 @@ def doAll(args):
         dest = './docs/%s/' % page['publishPath']
         print("copying %s to %s" % (src,dest))
         shutil.copytree(src, dest)
+
+    handleRobots()
 
     print("Done")
 
