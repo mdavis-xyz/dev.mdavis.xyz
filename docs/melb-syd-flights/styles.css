@@ -1,0 +1,37 @@
+/* custom page-specific CSS here */
+
+video {
+   border-radius: 0.2em;
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+}
+
+/* Booktabs-style table formatting */
+table {
+  border-collapse: collapse;
+  margin: 1.5rem auto;
+}
+
+table th {
+  text-align: left;
+  border-top: 2px solid white;
+  border-bottom: 1px solid white;
+  padding: 0.5rem 0.75rem;
+}
+
+table td {
+  padding: 0.5rem 0.75rem;
+}
+
+table tr:last-child td {
+  border-bottom: 2px solid white;
+}
+
+
+table:first-of-type tr:nth-last-child(2) td {
+  border-bottom: 1px solid white;
+}
+
+td:nth-child(3) {                                                                                                                                                                     
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}

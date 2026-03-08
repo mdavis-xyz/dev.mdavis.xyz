@@ -17,6 +17,21 @@
       - 'media'
       - 'script'
    template: 'home'
+-  title: "The cost of emissions from the Sydney-Melbourne flights"
+   description: "Estimating the quantity and damage of pollution from our busy flight corridor"
+   path: "melb-syd-flights"
+   disclaimer: >
+     These views are my own, and do not necessarily reflect those of my employer.
+     (But you already knew that.)
+   images:
+      card:
+         path: "map.jpg"
+         description: "Map with planes"
+         width: 900
+         height: 600
+   template: "markdown"
+   markdown: "content.md"
+   date: 1/3/2026
 -  title: "So you want to query Australian electricity data?"
    description: "A guide to AEMO's MMS dataset"
    path: "mms-guide"
