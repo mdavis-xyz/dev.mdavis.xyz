@@ -58,6 +58,7 @@ To summarise the difference, low carbon prices today reflect the low cost reduci
 
 However, since those government numbers drive government investment decisions, I also did analysis with that.
 The AEMC uses a price of [80 AUD/tonne in 2026](https://www.aemc.gov.au/sites/default/files/2024-03/AEMC%20guide%20on%20how%20energy%20objectives%20shape%20our%20decisions%20clean%20200324.pdf) (Table A.1, page 19).
+With this price, CO<sub>2</sub> damage is $365,801 per day, bringing the total to $1.33 million.
 Interestingly, with this lower shadow price of carbon, the biggest pollutant by far (by dollar cost) is nitrous oxide cost, at triple the cost of carbon damage. I found this surprising, however there is [research](https://www.sciencedaily.com/releases/2019/11/191107202553.htm) showing that this is indeed the case.
 
 For other pollutants:
